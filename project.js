@@ -2,6 +2,8 @@ const form = document.getElementById("car-form");
 const titleElement = document.querySelector("#title");
 const priceElement = document.querySelector("#price");
 const urlElement = document.querySelector("#url");
+const cardbody = document.querySelectorAll(".card-body")[1]; //2.card-body seçeriz
+
 
 //Tüm Eventleri yükleme 
 
@@ -13,6 +15,7 @@ function eventListeners(){
     let cars = storage.getCarsFromStorage();
     ui.loadAllCars(cars)
    })
+   cardbody.addEventListener("click",deleteCar);
 }
 
 function addCar(e) {
@@ -33,4 +36,8 @@ function addCar(e) {
        ui.displayMessages("Araç başarıyla eklendi.","success");
    }
    ui.clearInputs(titleElement, priceElement, urlElement);
+}
+
+function deleteCar(e){
+    console.log(e.target);
 }
