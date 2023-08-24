@@ -9,6 +9,10 @@ eventListeners();
 
 function eventListeners(){
    form.addEventListener("submit",addCar);
+   document.addEventListener("DOMContentLoaded",function(){
+    let cars = storage.getCarsFromStorage();
+    ui.loadAllCars(cars)
+   })
 }
 
 function addCar(e) {
