@@ -16,5 +16,15 @@ Storage.prototype.getCarsFromStorage = function () {
     }
     return cars;
 };
+Storage.prototype.deleteCarFromStroge = function(carTitle){
+    let cars = this.getCarsFromStorage();
+    cars.forEach(function(car,index){
+        cars.splice(index,1);
+        localStorage.setItem("cars",JSON.stringify(cars))
+    });
+}
 
+Storage.prototype.clearAllCarsFromStroge = function(){
+    localStorage.removeItem("cars");
+}
 const storage = new Storage();

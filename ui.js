@@ -65,6 +65,12 @@ UI.prototype.deleteCarFormUI = function(element){
   element.parentElement.parentElement.remove();
 }
 
-
+UI.prototype.clearAllCarsFromUI = function(){
+  const carList = document.getElementById("cars")
+  //carList.innerHTML="" (yavaş çlışır)
+  while(carList.firstElementChild !== null){
+    carList.firstElementChild.remove();
+  }
+}
 //UI objesini Başlatma
 const ui = new UI();
