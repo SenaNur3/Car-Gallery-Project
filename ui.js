@@ -61,5 +61,10 @@ UI.prototype.loadAllCars = function (cars) {
    ` });
 };
 
+UI.prototype.deleteCarFormUI = function(element){
+  element.parentElement.parentElement.remove();
+}
+
+
 //UI objesini Başlatma
 const ui = new UI();

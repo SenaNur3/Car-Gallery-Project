@@ -39,5 +39,7 @@ function addCar(e) {
 }
 
 function deleteCar(e){
-    console.log(e.target);
+    if(e.target.id === "delete-car"){
+        ui.deleteCarFormUI(e.target);
+    }
 }
